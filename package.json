@@ -1,0 +1,8 @@
+{
+  "name": "nasa-space-app-tide-predict",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ShamatienkoYaroslav/nasa-space-app-tide-predict.git",
+  "author": "Yaroslav Shamatienko <ShamatienkoYaroslav@users.noreply.github.com>",
+  "license": "MIT"
+}
