@@ -1,0 +1,16 @@
+type Station {
+  id: ID! @id
+  wtId: String! @unique
+  name: String!
+  lat: Float!
+  lng: Float!
+}
+
+type Extreme {
+  id: ID! @id
+  lat: Float! @default(value: 0.0)
+  lng: Float! @default(value: 0.0)
+  dt: DateTime!
+  height: Float
+  type: String
+}
