@@ -14,7 +14,7 @@ export const actions = {
     commit('SET_LOADING', true)
 
     try {
-      const items = await this.$api.stations.getStations()
+      const items = await this.$api.extremes.getExtremes()
       commit('SET_ITEMS', items)
     } catch (error) {
       console.log(error);

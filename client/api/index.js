@@ -1,4 +1,5 @@
 import * as stations from '@/api/stations.api'
+import * as extremes from '@/api/extremes.api'
 
 export const mapBindMethods = (context, methods) => {
   const obj = {}
@@ -11,5 +12,6 @@ export const mapBindMethods = (context, methods) => {
 export default (context) => {
   return {
     stations: mapBindMethods(context, stations),
+    extremes: mapBindMethods(context, extremes),
   }
 }

@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div class="bg-gray-900 h-15 p-4">
+      <span class="font-bold text-white text-xl">NextTide</span>
+    </div>
+
     <nuxt />
   </div>
 </template>
