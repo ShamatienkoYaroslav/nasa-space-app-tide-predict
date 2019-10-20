@@ -50,7 +50,11 @@ router.get('/', async (req: Request, res: Response) => {
   }
 
   try {
-    res.json(await prisma.extremes({ where: { lat, lng } }));
+    if (lat && lng) {
+      res.json(await prisma.extremes({ where: { lat, lng } }));
+      return;
+    }
+    res.json(await prisma.extremes());
   } catch (error) {
     console.log({ error });
     err = error;

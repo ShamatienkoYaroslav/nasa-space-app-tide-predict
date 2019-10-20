@@ -1,3 +1,4 @@
+const axiosProxyTarget = 'http://46.101.194.183:5000'
 
 export default {
   mode: 'universal',
@@ -5,7 +6,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'TideWind',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -13,6 +14,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: 'https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/worldwind.min.js'
+      }
     ]
   },
   /*
@@ -28,6 +34,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/inject.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -40,7 +47,24 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
+
+  axios: {
+    proxy: true,
+  },
+
+  proxy: {
+    '/api': {
+      target: axiosProxyTarget,
+      changeOrigin: true,
+      secure: false,
+      pathRewrite: {
+        '^/api': ''
+      }
+    }
+  },
+
   /*
   ** Build configuration
   */
